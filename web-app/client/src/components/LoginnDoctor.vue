@@ -1,12 +1,15 @@
 <template>
      <div>
        
-      
+ 
             
           <div class="regpatient" >
                 <h1 id="pl">DOCTOR LOGIN</h1>
                 <form @submit="fs" enctype=multipart/form-data>
                     <ul>
+                        <div class="imgcontainer">
+                            <img src="./img_avatar2.png" alt="Avatar" class="avatar" >
+                            </div>
                         <li>
                             <label for="fname" class="label" >Username:</label>
                             <input type="text"   v-model="username"   id="fname" name="username" class="inputfield" required><br><br>
@@ -121,8 +124,8 @@ export default {
 .regpatient
 {
     background-color: white;
-    height: 320px;
-    width: 330px;
+    height: 410px;
+    width: 360px;
     border-radius: 25px;
     padding: 2em;
     margin: 5em auto;
@@ -136,7 +139,7 @@ export default {
     background-color: #126597; /* Green */
   border: none;
   color: white;
-  padding: 12px;
+  padding: 16px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -168,14 +171,27 @@ ul{
     font-size: 12px;
 }
 .container {
-  padding: 10px;
+  padding: 5px;
 }
 .sub {
-  padding: 10px;
+  padding: 35px;
+  
 }
 /* The "Forgot password" text */
 span.psw {
   float: right;
   padding-top: 6px;
 }
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 26px 0;
+}
+
+/* Avatar image */
+img.avatar {
+  width: 30%;
+  height: 10%;
+  border-radius: 50%;
+}
+
 </style>

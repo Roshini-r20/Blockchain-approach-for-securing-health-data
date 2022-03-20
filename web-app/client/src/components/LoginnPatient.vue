@@ -1,10 +1,5 @@
 <template>
       <div>
-
-        
-           
-       
-         
           <div v-show="vs" class="regpatient" >
 
                 <h1 id="pl" >PATIENT LOGIN</h1>

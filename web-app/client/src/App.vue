@@ -40,7 +40,7 @@
 
 <style>
 body {
-  background-image: "goku-ultrainstinct.jpeg" ;
+  
   background-color: #e6e6e6;
   font-family: "Roboto", sans-serif;
 
