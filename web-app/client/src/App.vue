@@ -9,9 +9,8 @@
           <h1 id="hero">EHR</h1>
         </div>
         <div>
-          <router-link to="/">Home</router-link>
+          <router-link to="/">Home&ensp;</router-link>
          
-          
           <div class="dropdown">
             <button class="dropbtn">Register</button>
             <div class="dropdown-content">
@@ -30,9 +29,8 @@
              <router-link to="/LoginHospitalAdmin">Login Hospital Admin</router-link>
             </div>
           </div>
-
-
-          <router-link to="/about">About</router-link>
+          
+          <router-link to="/about">&ensp;About</router-link>
         </div>
       </div>
     </div>
@@ -42,6 +40,7 @@
 
 <style>
 body {
+  background-image: "goku-ultrainstinct.jpeg" ;
   background-color: #e6e6e6;
   font-family: "Roboto", sans-serif;
 
@@ -120,6 +119,6 @@ img {
   background-color: #676867;
 }
 #hero{
-  margin-right: 25em;
+  margin-right: 30em;
 }
 </style>

@@ -15,6 +15,9 @@
                             <label for="fname" class="label">Password:</label>
                             <input type="text"    v-model="password"   id="fname" name="password" class="inputfield"><br><br>
                         </li>
+                        <div class="container">
+                         <span class="psw"><a href="#">Forgot password?</a></span>
+                         </div>
                       
                       
                        
@@ -22,8 +25,8 @@
                             
                         </li>
                     </ul>
-                    
-                     <input type="submit" value="Submit" name="patient" class="signup">
+                    <div class="sub">
+                     <input type="submit" value="Submit" name="patient" class="signup"></div>
                 </form>
         
             </div>
@@ -118,8 +121,8 @@ export default {
 .regpatient
 {
     background-color: white;
-    height: 280px;
-    width: 300px;
+    height: 320px;
+    width: 330px;
     border-radius: 25px;
     padding: 2em;
     margin: 5em auto;
@@ -160,4 +163,19 @@ ul{
     list-style-type: none;
 }
 
+.span{
+    font-weight: italic;
+    font-size: 12px;
+}
+.container {
+  padding: 10px;
+}
+.sub {
+  padding: 10px;
+}
+/* The "Forgot password" text */
+span.psw {
+  float: right;
+  padding-top: 6px;
+}
 </style>

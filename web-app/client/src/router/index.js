@@ -75,6 +75,7 @@ Vue.use(VueRouter)
     component: RegisterInsurance
   },
   {
+    
     path: '/about',
     name: 'About',
     // route level code-splitting
