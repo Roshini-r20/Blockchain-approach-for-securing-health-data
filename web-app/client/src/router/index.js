@@ -10,6 +10,7 @@ import LoginInsurance from '../views/LoginInsurance.vue'
 import LoginHospitalAdmin from '../views/LoginHospitalAdmin.vue'
 import PatientDashboard from '../views/PatientDashboard.vue'
 import DoctorDashboard from '../views/DoctorDashboard.vue'
+import InsuranceDashboard from '../views/InsuranceDashboard.vue'
 import HospitalAdminDashboard from '../views/HospitalAdminDashboard'
 Vue.use(VueRouter)
 
@@ -37,7 +38,7 @@ Vue.use(VueRouter)
   {
     path: '/InsuranceDashboard',
     name: 'InsuranceDashboard',
-    component: PatientDashboard
+    component: InsuranceDashboard
   },
   {
     path: '/LoginHospitalAdmin',
