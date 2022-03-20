@@ -118,14 +118,14 @@ export default {
 .regpatient
 {
     background-color: white;
-    height: 280px;
+    height: 300px;
     width: 300px;
     border-radius: 25px;
     padding: 2em;
     margin: 5em auto;
   
-  -webkit-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 10px 40px rgba(0, 0, 0, 0.);
+          box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
 }
 
 
