@@ -7,6 +7,9 @@
                 <h1 id="pl">HOSPITAL ADMIN LOGIN</h1>
                 <form @submit="fs" enctype=multipart/form-data>
                     <ul>
+                        <li class="imgcontainer">
+                            <img src="./images.jpeg" alt="Avatar" class="avatar" >
+                            </li>
                         <li>
                             <label for="fname" class="label" >Username:</label>
                             <input type="text"   v-model="username"   id="fname" name="username" class="inputfield" required><br><br>
@@ -22,10 +25,10 @@
                        
                         <li>
                             <!-- <input type="submit" value="Submit" name="patient" class="signup"> -->
-                        </li>
-                    </ul>
+                        </li><br><br>
+                   
                     <div class="sub">
-                     <input type="submit" value="Submit" name="patient" class="signup"></div>
+                     <input type="submit" value="Submit" name="patient" class="signup"></div> </ul>
                 </form>
         
             </div>
@@ -118,8 +121,8 @@ export default {
 .regpatient
 {
     background-color: white;
-    height: 330px;
-    width: 320px;
+    height: 400px;
+    width: 360px;
     border-radius: 25px;
     padding: 2em;
     margin: 5em auto;
@@ -160,7 +163,8 @@ ul{
     list-style-type: none;
 }
 .container {
-  padding: 10px;
+  padding: 6px;
+  float: center;
 }
 .sub {
   padding: 10px;
@@ -169,5 +173,16 @@ ul{
 span.psw {
   float: right;
   padding-top: 6px;
+}
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 16px 0;
+}
+
+/* Avatar image */
+img.avatar {
+  width: 35%;
+  height: 10%;
+  border-radius: 50%;
 }
 </style>

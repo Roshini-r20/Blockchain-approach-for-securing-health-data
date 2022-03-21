@@ -4,11 +4,11 @@
  
             
           <div class="regpatient" >
-                <h1 id="pl">DOCTOR LOGIN</h1>
+                <h1 id="pl">  DOCTOR LOGIN  </h1>
                 <form @submit="fs" enctype=multipart/form-data>
                     <ul>
                         <div class="imgcontainer">
-                            <img src="./img_avatar2.png" alt="Avatar" class="avatar" >
+                            <img src="./doct.jpg" alt="Avatar" class="avatar" align="center" >
                             </div>
                         <li>
                             <label for="fname" class="label" >Username:</label>
@@ -27,9 +27,9 @@
                         <li>
                             
                         </li>
-                    </ul>
+                    <br><br>
                     <div class="sub">
-                     <input type="submit" value="Submit" name="patient" class="signup"></div>
+                     <input type="submit" value="Submit" name="patient" class="signup"></div></ul>
                 </form>
         
             </div>
@@ -174,7 +174,7 @@ ul{
   padding: 5px;
 }
 .sub {
-  padding: 35px;
+  padding: 10px;
   
 }
 /* The "Forgot password" text */
@@ -184,14 +184,14 @@ span.psw {
 }
 .imgcontainer {
   text-align: center;
-  margin: 24px 0 26px 0;
+  margin: 14px 0 16px 0;
 }
 
 /* Avatar image */
 img.avatar {
-  width: 30%;
+  width: 35%;
   height: 10%;
-  border-radius: 50%;
+  border-radius: 70%;
 }
 
 </style>

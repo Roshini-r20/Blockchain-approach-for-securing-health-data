@@ -7,6 +7,9 @@
                 <h1 id="pl">INSURANCE LOGIN</h1>
                 <form @submit="fs" enctype=multipart/form-data>
                     <ul>
+                      <div class="imgcontainer">
+                            <img src="./insurance.jpg" alt="Avatar" class="avatar" >
+                            </div>
                         <li>
                             <label for="fname" class="label" >Username:</label>
                             <input type="text"   v-model="username"   id="fname" name="username" class="inputfield" required><br><br>
@@ -23,9 +26,9 @@
                         <li>
                             
                         </li>
-                    </ul>
+                    <br><br>
                     <div class="sub">
-                     <input type="submit" value="Submit" name="patient" class="signup"></div>
+                     <input type="submit" value="Submit" name="patient" class="signup"></div></ul>
                 </form>
         
             </div>
@@ -120,8 +123,8 @@ export default {
 .regpatient
 {
     background-color: white;
-    height: 320px;
-    width: 330px;
+    height: 410px;
+    width: 360px;
     border-radius: 25px;
     padding: 2em;
     margin: 5em auto;
@@ -162,7 +165,7 @@ ul{
     list-style-type: none;
 }
 .container {
-  padding: 14px;
+  padding: 10px;
 }
 .sub {
   padding: 10px;
@@ -172,4 +175,16 @@ span.psw {
   float: right;
   padding-top: 10px;
 }
+.imgcontainer {
+  text-align: center;
+  margin: 14px 0 12px 0;
+}
+
+/* Avatar image */
+img.avatar {
+  width: 35%;
+  height: 10%;
+  border-radius: 90%;
+}
+
 </style>
