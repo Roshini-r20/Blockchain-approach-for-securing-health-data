@@ -121,7 +121,7 @@ export default {
 .regpatient
 {
     background-color: white;
-    height: 400px;
+    height: 410px;
     width: 360px;
     border-radius: 25px;
     padding: 2em;
@@ -181,8 +181,8 @@ span.psw {
 
 /* Avatar image */
 img.avatar {
-  width: 35%;
-  height: 10%;
+  width: 39%;
+  height: 12%;
   border-radius: 50%;
 }
 </style>

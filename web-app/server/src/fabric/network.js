@@ -197,15 +197,15 @@ if (!adharNo || !name || !age || !phNo) {
     // Create a new file system based wallet for managing identities.
     const walletPath = path.join(process.cwd(), 'wallet');
     const wallet = new FileSystemWallet(walletPath);
-    console.log(`Wallet path: ${walletPath}`);
+    console.log('Wallet path: ${walletPath}');
     console.log(wallet);
 
     // Check to see if we've already enrolled the user.
     const userExists = await wallet.exists(patientId);
     if (userExists) {
       let response = {};
-      console.log(`An identity for the patient with patientId ${patientId} already exists in the wallet`);
-      response.error = `Error! An identity for the patient with patientId ${patientId} already exists in the wallet.`;
+      console.log('An identity for the patient with patientId ${patientId} already exists in the wallet');
+      response.error = 'Error! An identity for the patient with patientId ${patientId} already exists in the wallet.';
       return response;
     }
 
