@@ -176,13 +176,13 @@ class MyAssetContract extends Contract {
     return response;
   }
 
-  async createDoctor(ctx, args) {
+  async createInsurance(ctx, args) {
 
     args = JSON.parse(args);
    //create a new Insurance
    let newInsurance = await new Insurance(args.insuranceId, args.licenseId, args.name, args.age, args.phNo);
 
-   //update state with new Doctor
+   //update state with new Insurance
    await ctx.stub.putState(newInsurance.insuranceId, Buffer.from(JSON.stringify(newInsurance)));
 
    let response = {"Success": `Insurance with licenseId ${newInsurance.licenseId} is updated in the world state of the EHR blockchain network`};
