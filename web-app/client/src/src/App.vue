@@ -9,9 +9,8 @@
           <h1 id="hero">EHR</h1>
         </div>
         <div>
-          <router-link to="/">Home</router-link>
+          <router-link to="/">Home&ensp;</router-link>
          
-          
           <div class="dropdown">
             <button class="dropbtn">Register</button>
             <div class="dropdown-content">
@@ -27,12 +26,11 @@
             <router-link to="/LoginPatient">Login Patient</router-link>
              <router-link to="/LoginDoctor">Login Doctor</router-link>
              <router-link to="/LoginInsurance">Login Insurance</router-link>
-             
+             <router-link to="/LoginHospitalAdmin">Login Hospital Admin</router-link>
             </div>
           </div>
-
-
-          <router-link to="/about">About</router-link>
+          
+          <router-link to="/about">&ensp;About</router-link>
         </div>
       </div>
     </div>
@@ -42,7 +40,8 @@
 
 <style>
 body {
-  background-color: #e7feff;
+  
+  background-color: #e6e6e6;
   font-family: "Roboto", sans-serif;
 
   letter-spacing: 0.1em;
@@ -63,14 +62,14 @@ body {
 }
 
 img {
-  height: 70px;
-  width: 80px;
+  height: 50px;
+  width: 70px;
 }
 
 
 /* Style The Dropdown Button */
 .dropbtn {
-   background-color: #e7feff; 
+   background-color: #e6e6e6; 
   color: black;
   padding: 16px;
   font-size: 16px;
@@ -108,7 +107,7 @@ img {
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #4FC0E8}
+.dropdown-content a:hover {background-color: #676867}
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
@@ -117,9 +116,9 @@ img {
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
-  background-color: #4FC0E8;
+  background-color: #676867;
 }
 #hero{
-  margin-right: 25em;
+  margin-right: 30em;
 }
 </style>

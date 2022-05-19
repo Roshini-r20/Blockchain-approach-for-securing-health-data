@@ -204,8 +204,8 @@ if (!adharNo || !name || !age || !phNo) {
     const userExists = await wallet.exists(patientId);
     if (userExists) {
       let response = {};
-      console.log('An identity for the patient with patientId ${patientId} already exists in the wallet');
-      response.error = 'Error! An identity for the patient with patientId ${patientId} already exists in the wallet.';
+      console.log(`An identity for the patient with patientId ${patientId} already exists in the wallet`);
+      response.error = `Error! An identity for the patient with patientId ${patientId} already exists in the wallet.`;
       return response;
     }
 

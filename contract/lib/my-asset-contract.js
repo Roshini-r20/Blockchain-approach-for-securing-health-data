@@ -17,12 +17,13 @@ let Insurance = require('./Insurance.js')
 
 class MyAssetContract extends Contract {
 
-    async init(ctx) {
+    async init(ctx) { //The Context object (ctx) gives you direct access to the world state:
         console.log('instantiate was called!');
     }
 
     async myAssetExists(ctx, myAssetId) {
-        const buffer = await ctx.stub.getState(myAssetId);
+        const buffer = await ctx.stub.getState(myAssetId); //The getState method returns from the world state the current value associated with the key described by myAssetId. 
+        await ctx.stub.putState(myAssetId, buffer);
         return (!!buffer && buffer.length > 0);
     }
 
