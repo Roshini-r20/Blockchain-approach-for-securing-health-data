@@ -30,9 +30,7 @@
                 "Org1CA"
             ],
             "mspid": "Org1MSP",
-            "peers": [
-                "Org1Peer1"
-            ]
+            "peers": ["Org1Peer1"]
         },
         "Org2MSP": {
             "certificateAuthorities": [

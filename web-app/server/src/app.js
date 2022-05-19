@@ -63,7 +63,7 @@ app.post('/registerPatient', async (req, res) => {
     if (!(Object.keys(parsedCheck).length === 0 && obj.constructor === Object)){
       res.send({"error":"The patient is already registered"});
     }
-  
+    
     //first create the identity for the patient and add to wallet
     let response = await network.registerPatient(patientId, adharNo, req.body.name, req.body.age, req.body.phNo);
     console.log('response from registerPatient: ');

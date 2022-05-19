@@ -27,7 +27,7 @@
             <router-link to="/LoginPatient">Login Patient</router-link>
              <router-link to="/LoginDoctor">Login Doctor</router-link>
              <router-link to="/LoginInsurance">Login Insurance</router-link>
-             <router-link to="/LoginHospitalAdmin">Login Hospital Admin</router-link>
+             
             </div>
           </div>
 
@@ -42,7 +42,7 @@
 
 <style>
 body {
-  background-color: #e6e6e6;
+  background-color: #e7feff;
   font-family: "Roboto", sans-serif;
 
   letter-spacing: 0.1em;
@@ -63,14 +63,14 @@ body {
 }
 
 img {
-  height: 50px;
-  width: 70px;
+  height: 70px;
+  width: 80px;
 }
 
 
 /* Style The Dropdown Button */
 .dropbtn {
-   background-color: #e6e6e6; 
+   background-color: #e7feff; 
   color: black;
   padding: 16px;
   font-size: 16px;
@@ -108,7 +108,7 @@ img {
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #676867}
+.dropdown-content a:hover {background-color: #4FC0E8}
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
@@ -117,7 +117,7 @@ img {
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
-  background-color: #676867;
+  background-color: #4FC0E8;
 }
 #hero{
   margin-right: 25em;

@@ -13,15 +13,17 @@ const fs = require('fs');
 let Patient = require('./Patient.js');
 let Doctor = require('./Doctor.js')
 let Report = require('./Report.js')
+let Insurance = require('./Insurance.js')
 
 class MyAssetContract extends Contract {
 
-    async init(ctx) {
+    async init(ctx) { //The Context object (ctx) gives you direct access to the world state:
         console.log('instantiate was called!');
     }
 
     async myAssetExists(ctx, myAssetId) {
-        const buffer = await ctx.stub.getState(myAssetId);
+        const buffer = await ctx.stub.getState(myAssetId); //The getState method returns from the world state the current value associated with the key described by myAssetId. 
+        await ctx.stub.putState(myAssetId, buffer);
         return (!!buffer && buffer.length > 0);
     }
 
@@ -82,6 +84,29 @@ class MyAssetContract extends Contract {
   }
 
 
+  async checkMyAsset(ctx, args) {
+    args = JSON.parse(args);
+    let myAssetId = args.patientId;
+    if(!myAssetId){
+      myAssetId = args.insuranceId;
+    }
+    console.log("HELLO");
+    console.log(myAssetId);
+    const exists = await this.myAssetExists(ctx, myAssetId);
+    if (!exists ) {
+        throw new Error({"error":"The my asset ${myAssetId} does not exist"});
+    }
+    if ( args.pswd!="secret99" ){
+        if( args.pswd!="insurance99"){
+            return ({"error":"Wrong Password"})
+        }
+    }
+    
+    const buffer = await ctx.stub.getState(myAssetId);
+    if (buffer){
+          return ({"Success":"Logged in successfully"});
+        }
+}
 
     async updateMyAsset(ctx, myAssetId, newValue) {
         const exists = await this.myAssetExists(ctx, myAssetId);
@@ -152,6 +177,18 @@ class MyAssetContract extends Contract {
     return response;
   }
 
+  async createInsurance(ctx, args) {
+
+    args = JSON.parse(args);
+   //create a new Insurance
+   let newInsurance = await new Insurance(args.insuranceId, args.licenseId, args.name, args.age, args.phNo);
+
+   //update state with new Insurance
+   await ctx.stub.putState(newInsurance.insuranceId, Buffer.from(JSON.stringify(newInsurance)));
+
+   let response = {"Success": `Insurance with licenseId ${newInsurance.licenseId} is updated in the world state of the EHR blockchain network`};
+   return response;
+ }
 
 
   async createReport(ctx, args) {
@@ -267,7 +304,12 @@ class MyAssetContract extends Contract {
   }
   
 
+  async getInsurances(ctx){
 
+    let queryResults = await this.queryByObjectType(ctx, 'insurance');
+    return queryResults;
+
+  }
 
   async requestAccess(ctx, args){
 
@@ -297,7 +339,33 @@ class MyAssetContract extends Contract {
     return response;
   }
 
+  async requestAccess(ctx, args){
 
+    args = JSON.parse(args);
+
+    //check if the patient exists or not
+    let myAssetId = args.patientId;
+    const exists = await this.myAssetExists(ctx, myAssetId);
+    if (!exists ) {
+        throw new Error({"error":"The patient ${myAssetId} does not exist"});
+    }
+
+
+    //get the report object from the state - with the reportId the insurance picked
+    let reportAsBytes = await ctx.stub.getState(args.reportId);
+    let report = await JSON.parse(reportAsBytes);
+
+    //update the isAsked flag for the report specified
+    report.isAsked = "1";
+
+    //update the state with the new flag isAsked value
+    let result = await ctx.stub.putState(args.reportId, Buffer.from(JSON.stringify(report)));
+    console.log(result);
+    
+    let response = {"Success": `The request access for the report with reportId ${report.reportId} has been notified to the patient with patientId ${myAssetId}. Please wait for the patient to respond to your request!`};
+    console.log(response)
+    return response;
+  }
 
   
   async grantAccess(ctx, args){
@@ -312,7 +380,7 @@ class MyAssetContract extends Contract {
     }
 
 
-    //get the report object from the state - with the reportId the doctor picked
+    //get the report object from the state - with the reportId the insurance picked
     let reportAsBytes = await ctx.stub.getState(args.reportId);
     let report = await JSON.parse(reportAsBytes);
 
@@ -354,7 +422,7 @@ class MyAssetContract extends Contract {
     let result = await ctx.stub.putState(args.reportId, Buffer.from(JSON.stringify(report)));
     console.log(result);
     
-    let response = {"Success": `The access for the report with reportId ${report.reportId} has been rejected successfully! The Doctor will be notified regarding this.`};
+    let response = {"Success": `The access for the report with reportId ${report.reportId} has been rejected successfully! The Insurance will be notified regarding this.`};
     console.log(response)
     return response;
   }
