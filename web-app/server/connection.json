@@ -5,19 +5,19 @@
     "certificateAuthorities": {
         "Org1CA": {
             "caName": "ca",
-            "url": "http://localhost:17050"
+            "url": "http://192.168.1.3:17050"
         },
         "Org2CA": {
             "caName": "ca",
-            "url": "http://localhost:17055"
+            "url": "http://192.168.1.3:17055"
         }
     },
     "client": {
         "connection": {
             "timeout": {
-                "orderer": "300",
+                "orderer": "3000",
                 "peer": {
-                    "endorser": "300"
+                    "endorser": "3000"
                 }
             }
         },
@@ -30,7 +30,9 @@
                 "Org1CA"
             ],
             "mspid": "Org1MSP",
-            "peers": ["Org1Peer1"]
+            "peers": [
+                "Org1Peer1"
+            ]
         },
         "Org2MSP": {
             "certificateAuthorities": [

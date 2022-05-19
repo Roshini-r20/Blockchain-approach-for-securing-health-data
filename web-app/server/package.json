@@ -13,12 +13,10 @@
     "cors": "^2.8.5",
     "eslint": "^6.0.1",
     "express": "^4.17.1",
-    "fabric-ca-client": "~1.4.2",
-    "fabric-client": "^1.4.3",
-    "fabric-network": "~1.4.2",
-    "grpc": "^1.24.2",
+    "fabric-ca-client": "^2.2.11", 
+    "fabric-client": "^1.4.19", 
+    "fabric-network": "^2.2.11",
     "morgan": "^1.9.1",
-    "nodemon": "^1.19.1",
-    "react-scripts": "^2.1.8"
+    "nodemon": "^1.19.1"
   }
 }
